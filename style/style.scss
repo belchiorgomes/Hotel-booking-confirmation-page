@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin media($breakpoint){
+    @if $breakpoint == 'mobile'{
+        @media (max-width: 375px){
+            @content;
+        }
+    } @else if $breakpoint == 'desktop'{
+        @media (min-width: 768px){
+            @content;
+        }
+    }
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include media('desktop'){
+        flex-wrap: nowrap;
+    }
+
+    &--sidebar{
+        @include media('mobile'){
+            flex: 0 0 100%;
+            background-color: coral;
+        }
+
+        @include media('desktop'){
+            flex: 0 0 30%;
+        }
+
+        padding: 1.1rem;
+
+        &--logo{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
