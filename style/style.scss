@@ -21,29 +21,54 @@
 .container{
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-wrap: wrap;
+
+    @include media('mobile'){
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 
     @include media('desktop'){
-        flex-wrap: nowrap;
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-template-areas: "sidebar main";
+
+        &--sidebar{
+            grid-area: 'sidebar';
+        }
+
+        &--main{
+            grid-area: 'main';
+        }
     }
 
     &--sidebar{
-        @include media('mobile'){
-            flex: 0 0 100%;
-            background-color: coral;
-        }
-
-        @include media('desktop'){
-            flex: 0 0 30%;
-        }
-
-        padding: 1.1rem;
+        position: relative;
 
         &--logo{
+            position: relative;
+            width: 100%;
+            height: 100px;
+            padding: 1.1rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            .menu-btn{
+                @include media('desktop'){
+                    display: none;
+                }
+            }
+        }
+
+        &--menu--popover{
+            @include media('desktop'){
+                display: none;
+            }
+
+            // width: 100%;
+            position: absolute;
+            top: 100px;
+            left: 0;
         }
     }
 }
