@@ -6,6 +6,30 @@
     box-sizing: border-box;
 }
 
+$Neutral-900: hsl(33, 15%, 15%);
+$Neutral-800: hsl(33, 22%, 20%);
+$Neutral-700: hsl(32, 20%, 29%);
+$Neutral-600: hsl(33, 17%, 41%);
+$Neutral-400: hsl(36, 22%, 86%);
+$Neutral-200: hsl(30, 24%, 93%);
+$Neutral-100: hsl(35, 60%, 96%);
+$Neutral-50: hsl(40, 60%, 98%);
+$Neutral-0: hsl(0, 0%, 100%);
+
+$Sun-500: hsl(42, 83%, 58%);
+$Sun-300: hsl(44, 84%, 75%);
+$Sun-200: hsl(45, 100%, 74%);
+$Sun-50: hsl(41, 100%, 93%);
+
+$Terracotta-700: hsl(15, 69%, 37%);
+$Terracotta-600: hsl(15, 74%, 41%);
+$Terracotta-500: hsl(18, 62%, 47%);
+$Terracotta-400: hsl(22, 72%, 56%);
+
+$Blue-500: hsl(230, 49%, 56%);
+
+$Rose-500: hsl(340, 48%, 52%);
+
 @mixin media($breakpoint){
     @if $breakpoint == 'mobile'{
         @media (max-width: 375px){
@@ -29,7 +53,7 @@
 
     @include media('desktop'){
         display: grid;
-        grid-template-columns: 200px 1fr;
+        grid-template-columns: 300px 1fr;
         grid-template-areas: "sidebar main";
 
         &--sidebar{
@@ -43,11 +67,14 @@
 
     &--sidebar{
         position: relative;
+        
+        background-color: $Neutral-100;
 
         &--logo{
             position: relative;
             width: 100%;
             height: 100px;
+            border-bottom: 2px solid #000;
             padding: 1.1rem;
             display: flex;
             align-items: center;
@@ -60,15 +87,35 @@
             }
         }
 
-        &--menu--popover{
+        &--menu--popover:popover-open{
             @include media('desktop'){
-                display: none;
+                display: flex;
+                border: none;
+                background-color: $Neutral-100;
             }
 
-            // width: 100%;
+            background-color: $Neutral-100;
+            border: none;
+        }
+
+        &--menu--popover{
+            @include media('desktop'){
+                display: flex;
+                flex-direction: column;
+                border: none;
+                background-color: $Neutral-100;
+            }
+
+            width: 100%;
             position: absolute;
             top: 100px;
             left: 0;
+
+            ul{
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+            }
         }
     }
 }
