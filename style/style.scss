@@ -73,7 +73,7 @@ $Rose-500: hsl(340, 48%, 52%);
             position: relative;
             width: 100%;
             height: 100px;
-            border-bottom: 2px solid #000;
+            border-bottom: 2px solid $Neutral-400;
             padding: 1.1rem;
             display: flex;
             align-items: center;
@@ -82,7 +82,8 @@ $Rose-500: hsl(340, 48%, 52%);
             .menu-btn{
                 position: relative;
                 background-color: transparent;
-                border: 1px solid #000;
+                // border: 1px solid #000;
+                border: 2px solid $Neutral-400;
 
                 display: inline-flex;
                 align-items: center;
@@ -157,25 +158,44 @@ $Rose-500: hsl(340, 48%, 52%);
                 gap: 1.1rem;
                 height: 100vh;
                 padding: 1.1rem;
-                border-bottom: 2px solid #000;
+                border-bottom: 2px solid $Neutral-400;
 
                 .active{
                     background-color: $Neutral-0;
                     color: #000;
                 }
 
+                li:nth-of-type(1){
+                    display: flex;
+                    position: relative;
+                    span{
+                        position: absolute;
+                        right: 1.1rem;
+                        width: 30px;
+                        height: 30px;
+                        text-align: center;
+                        line-height: 30px;
+                        background-color: $Terracotta-700;
+                        border-radius: 50%;
+                        color: $Neutral-0;
+                    }
+                }
+
                 li{
+                    font-family: "DM Mono", serif;
                     padding: 1.1rem;
                     border-radius: .4rem;
                     color: $Neutral-600;
                     display: flex;
                     align-items: center;
                     gap: .4rem;
+                    
                     transition: all .6s ease-in-out;
 
                     &:active,&:hover{
                         background-color: $Neutral-0;
                         color: #000;
+                        box-shadow: 0 0 8px $Neutral-400;
                     }
                 }
             }
@@ -184,6 +204,8 @@ $Rose-500: hsl(340, 48%, 52%);
                 padding: 1.1rem;
 
                 .card{
+                    width: 100%;
+                    font-family: "DM Mono", serif;
                     position: relative;
                     display: flex;
                     flex-flow: column wrap;
@@ -210,8 +232,13 @@ $Rose-500: hsl(340, 48%, 52%);
                 }
 
                 pre{
+                    font-family: "DM Mono", serif;
+                    font-size: 11px;
                     margin-left: 0;
                     padding-left: 0;
+                    margin-block: 1.1rem;
+                    color: $Neutral-600;
+                    line-height: 1.8;
                 }
             }
         }
