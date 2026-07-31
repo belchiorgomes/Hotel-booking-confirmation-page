@@ -243,4 +243,60 @@ $Rose-500: hsl(340, 48%, 52%);
             }
         }
     }
+
+    &--main{
+        background-color: $Neutral-100;
+        padding: 1.1rem;
+
+        &--header{
+            p{
+                font-family: "DM Mono", serif;
+                text-transform: uppercase;
+                font-size: 14px;
+            }
+
+            &--h1-btn{
+                display: flex;
+                flex-direction: column;
+                gap: 1.1rem;
+                margin-block: 1.1rem;
+
+                @include media('desktop'){
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                h1{
+                    color: $Neutral-900;
+
+                    .different{
+                        color: $Terracotta-600;
+                    }
+                }
+
+                .header-btn{
+                    display: flex;
+                    gap: 1.1rem;
+
+                    button{
+                        padding: .8rem;
+                        background-color: transparent;
+                        border: 1px solid $Neutral-400;
+                        border-radius: 1.1rem;
+                        color: $Neutral-900;
+
+                        &:nth-child(2){
+                            color: $Neutral-0;
+                            background-color: $Neutral-900;
+                        }
+
+                        &:hover{
+                            border-color: $Terracotta-400;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
