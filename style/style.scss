@@ -307,15 +307,57 @@ $Rose-500: hsl(340, 48%, 52%);
 
             @include media('desktop'){
                 flex-direction: row;
+                justify-content: center;
             }
 
             .card{
+                flex: 0 0 100%;
                 padding: 1.1rem;
                 border-radius: 1.1rem;
+
+                @include media('desktop'){
+                    flex: 0 0 300px;
+                }
             }
 
             .host-card{
                 background-image: linear-gradient(45deg, $Terracotta-700, $Terracotta-500);
+                color: $Neutral-0;
+                box-shadow: 0 0 12px $Terracotta-700;
+                transform: rotate(5deg);
+
+                h4{
+                    color: $Neutral-0;
+                    text-transform: uppercase;
+                    font-size: .8em;
+                    padding: .8rem 0;
+                    border-top: 1px dashed;
+                }
+
+                h3.special{
+                    margin-block: 1rem;
+                    color: $Sun-500;
+                }
+
+                h2{
+                    color: $Neutral-0;
+                }
+
+                p{
+                    margin-block: 1.1rem;
+                    color: $Neutral-0;
+                }
+
+                span{
+                    display: block;
+                    margin-block-start: 2rem;
+                }
+            }
+
+            .receipt-card{
+                background-color: $Neutral-0;
+                transform: rotate(-5deg);
+                box-shadow: 0 0 12px $Neutral-400;
             }
         }
     }
