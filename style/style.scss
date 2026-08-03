@@ -298,5 +298,25 @@ $Rose-500: hsl(340, 48%, 52%);
                 }
             }
         }
+
+        &--booking-cards{
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 1.1rem;
+            margin-block: 1.1rem;
+
+            @include media('desktop'){
+                flex-direction: row;
+            }
+
+            .card{
+                padding: 1.1rem;
+                border-radius: 1.1rem;
+            }
+
+            .host-card{
+                background-image: linear-gradient(45deg, $Terracotta-700, $Terracotta-500);
+            }
+        }
     }
 }

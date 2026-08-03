@@ -228,4 +228,22 @@ body:has(#menu-popover:popover-open) .menu-btn .btn-close {
 }
 .container--main--header--h1-btn .header-btn button:hover {
   border-color: hsl(22, 72%, 56%);
+}
+.container--main--booking-cards {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1.1rem;
+  margin-block: 1.1rem;
+}
+@media (min-width: 768px) {
+  .container--main--booking-cards {
+    flex-direction: row;
+  }
+}
+.container--main--booking-cards .card {
+  padding: 1.1rem;
+  border-radius: 1.1rem;
+}
+.container--main--booking-cards .host-card {
+  background-image: linear-gradient(45deg, hsl(15, 69%, 37%), hsl(18, 62%, 47%));
 }/*# sourceMappingURL=style.css.map */
